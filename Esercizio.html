@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Card Interattive</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <style>
+            .hidden {
+                display: none;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container text-center">
+            <div class="row my-1"> <!--PULSANTI-->
+                <div class="col-12">
+                    <span>Seleziona la categoria da visualizzare</span>
+                </div>
+                <div class="col-12">
+                    <button type="button" class="btn m-2 btn-info" onclick="filtraCards(this)" data-type="remove">Tutte</button>
+                    <button type="button" class="btn m-2 btn-info" onclick="filtraCards(this)" data-type="elettrodomestici">Elettrodomestici</button>
+                    <button type="button" class="btn m-2 btn-info" onclick="filtraCards(this)" data-type="smartphone">Smartphone</button>
+                    <button type="button" class="btn m-2 btn-info" onclick="filtraCards(this)" data-type="pc">PC</button>
+                </div>
+            </div>
+            <div class="row my-1"> <!--CARDS-->
+                <div class="card m-1 col-12 col-md-3 bg-secondary-subtle" data-type="pc">
+                    <div class="card-body">
+                        <h5 class="card-title">HP</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">PC</h6>
+                        <p class="card-text">Computer HP</p>
+                    </div>
+                </div>
+                <div class="card m-1 col-12 col-md-3 bg-secondary-subtle" data-type="pc">
+                    <div class="card-body">
+                        <h5 class="card-title">Lenovo</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">PC</h6>
+                        <p class="card-text">Computer Lenovo</p>
+                    </div>
+                </div>
+                <div class="card m-1 col-12 col-md-3 bg-secondary-subtle" data-type="smartphone">
+                    <div class="card-body">
+                        <h5 class="card-title">Xiaomi</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Smartphone</h6>
+                        <p class="card-text">Smartphone della Xiaomi</p>
+                    </div>
+                </div>
+                <div class="card m-1 col-12 col-md-3 bg-secondary-subtle" data-type="elettrodomestici">
+                    <div class="card-body">
+                        <h5 class="card-title">Frullatore</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Elettrodomestico</h6>
+                        <p class="card-text">Frullatore della Apple</p>
+                    </div>
+                </div>
+                <div class="card m-1 col-12 col-md-3 bg-secondary-subtle" data-type="pc">
+                    <div class="card-body">
+                        <h5 class="card-title">Mac</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">PC</h6>
+                        <p class="card-text">Computer della Apple</p>
+                    </div>
+                </div>
+                <div class="card m-1 col-12 col-md-3 bg-secondary-subtle" data-type="elettrodomestici">
+                    <div class="card-body">
+                        <h5 class="card-title">Lavastoviglie</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Elettrodomestico</h6>
+                        <p class="card-text">Lavastoviglie della Samsung</p>
+                    </div>
+                </div>
+                <div class="card m-1 col-12 col-md-3 bg-secondary-subtle" data-type="smartphone">
+                    <div class="card-body">
+                        <h5 class="card-title">Galaxy A4</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Smartphone</h6>
+                        <p class="card-text">Smartphone della Samsung</p>
+                    </div>
+                </div>
+                <div class="card m-1 col-12 col-md-3 bg-secondary-subtle" data-type="elettrodomestici">
+                    <div class="card-body">
+                        <h5 class="card-title">Frigorifero</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Elettrodomestico</h6>
+                        <p class="card-text">Frigorifero della Samsung</p>
+                    </div>
+                </div>
+                <div class="card m-1 col-12 col-md-3 bg-secondary-subtle" data-type="smartphone">
+                    <div class="card-body">
+                        <h5 class="card-title">I-phone 15</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Smartphone</h6>
+                        <p class="card-text">Smartphone della Apple</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="./js/bootstrap.bundle.js"></script>
+        <script>
+            const x = document.getElementsByClassName("card");
+            function filtraCards(tipo) {
+                if (tipo.getAttribute("data-type")=="remove") {
+                    for (const card of x) {
+                        card.classList.remove("hidden");
+                    }
+                } else {
+                    for (const card of x) {
+                        if (card.getAttribute("data-type")!=tipo.getAttribute("data-type")){
+                            card.classList.add("hidden");
+                        } else {
+                            card.classList.remove("hidden");
+                        }
+                    };
+                };
+            };
+        </script>
+    </body>
+</html>
